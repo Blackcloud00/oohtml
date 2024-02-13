@@ -4,37 +4,37 @@
 [![bundle][bundle-src]][bundle-href]
 [![License][license-src]][license-href]
 
-**[Explainer](#explainer) • [Features](#features) • [Modular HTML](#modular-html) • [HTML Imports](#html-imports) • [Data Binding](#data-binding) • [Data Plumbing](#data-plumbing) • [Implementation](#implementation) • [Examples](#examples) • [License](#license)**
+**[Açıklayıcı](#explainer) • [Özellikler](#features) • [Modüler HTML](#modular-html) • [HTML İçe Aktarımları](#html-imports) • [Veri Bağlama](#data-binding) • [Veri Tesisatı](#data-plumbing) • [Uygulama](#implementation) • [Örnekler](#examples) • [Lisans](#license)**
 
-Object-Oriented HTML (OOHTML) is a set of features that extend standard HTML and the DOM to enable authoring modular, reusable and reactive markup - with a "buildless" and intuitive workflow as design goal! This project revisits the HTML problem space to solve for an object-oriented approach to HTML!
+Nesne Yönelimli HTML (OOHTML), tasarım hedefi olarak "yapısız" ve sezgisel bir iş akışı ile modüler, yeniden kullanılabilir ve reaktif biçimlendirme yazmayı sağlamak için standart HTML ve DOM'u genişleten bir dizi özelliktir! Bu proje, HTML'ye nesne yönelimli bir yaklaşımı çözmek için HTML problem alanını yeniden gözden geçiriyor!
 
-Building Single Page Applications? OOHTML is a special love letter! Writing Web Components? Now you can do so with zero tooling! Love vanilla HTML but can't go far with that? Well, now you can!
+Tek Sayfalı Uygulamalar mı Oluşturuyorsunuz? OOHTML özel bir aşk mektubu! Web Bileşenleri mi Yazıyorsunuz? Artık bunu sıfır araçla yapabilirsiniz! Vanilya HTML'i seviyor ama onunla fazla ileri gidemiyor musunuz? Artık yapabilirsiniz!
 
-<details><summary>Versions</summary>
+<details><summary>Versiyonlar</summary>
 
-*This is documentation for `OOHTML@4`. (Looking for [`OOHTML@1`](https://github.com/webqit/oohtml/tree/v1.10.4)?)*
+*Bu, aşağıdakiler için bir dokümantasyondur `OOHTML@4`. (Aramak için [`OOHTML@1`](https://github.com/webqit/oohtml/tree/v1.10.4)?)*
 
 </details>
 
-## Status
+## Durum
 
-+ Actively maintained
-+ A working implementation
-+ [Proposed at the WICG](https://github.com/WICG/proposals/issues/137)
-+ Open to contributions
++ Aktif olarak sürdürülür
++ Çalışan bir uygulama
++ [WICG'de önerilen](https://github.com/WICG/proposals/issues/137)
++ Katkılara açık
 
-## Implementation
+## Uygulama
 
-OOHTML may be used today. This implementation adheres closely to the spec and helps evolve the proposal through a practice-driven process.
+OOHTML bugün kullanılabilir. Bu uygulama, spesifikasyona yakından bağlıdır ve önerinin uygulama odaklı bir süreçle geliştirilmesine yardımcı olur.
 
-<details><summary>Load from a CDN<br>
+<details><summary>CDN'den yükleme<br>
 └───────── <a href="https://bundlephobia.com/result?p=@webqit/oohtml"><img align="right" src="https://img.shields.io/badge/21.8%20kB-black"></a></summary>
 
 ```html
 <script src="https://unpkg.com/@webqit/oohtml/dist/main.lite.js"></script>
 ```
 
-└ This is to be placed early on in the document and should be a classic script without any `defer` or `async` directives!
+└ Bu, belgenin başlarına yerleştirilmeli ve herhangi bir `defer` veya `async` yönergesi içermeyen klasik bir komut dosyası olmalıdır!
 
 └ For `@webqit/oohtml@3.1` and below, you would need an external polyfill - like the [samthor/scoped](https://github.com/samthor/scoped) polyfill - for the Scoped Styles feature:
 

@@ -36,7 +36,7 @@ OOHTML bugün kullanılabilir. Bu uygulama, spesifikasyona yakından bağlıdır
 
 └ Bu, belgenin başlarına yerleştirilmeli ve herhangi bir `defer` veya `async` yönergesi içermeyen klasik bir komut dosyası olmalıdır!
 
-└ For `@webqit/oohtml@3.1` and below, you would need an external polyfill - like the [samthor/scoped](https://github.com/samthor/scoped) polyfill - for the Scoped Styles feature:
+└ `@webqit/oohtml@3.1` ve altı için harici bir polyfill'e ihtiyacınız olacaktır - örneğin [samthor/scoped](https://github.com/samthor/scoped) polyfill - Kapsamlı Stiller özelliği için:
 
 ```html
 <head>
@@ -44,7 +44,7 @@ OOHTML bugün kullanılabilir. Bu uygulama, spesifikasyona yakından bağlıdır
 </head>
 ```
 
-└ Being an integral part of OOHTML, the Observer and Quantum JS APIs are also accessible on loading the OOHTML polyfill:
+└ OOHTML'nin ayrılmaz bir parçası olan Observer ve Quantum JS API'lerine OOHTML polyfill yüklendiğinde de erişilebilir:
 
 ```js
 const { QuantumFunction, QuantumAsyncFunction, QuantumScript, QuantumModule, QuantumAsyncScript, State, Observer } = window.webqit;
@@ -52,7 +52,7 @@ const { QuantumFunction, QuantumAsyncFunction, QuantumScript, QuantumModule, Qua
 
 </details>
 
-<details><summary>Install from NPM<br>
+<details><summary>NPM'den yükleyin<br>
 └───────── <a href="https://npmjs.com/package/@webqit/oohtml"><img align="right" src="https://img.shields.io/npm/v/@webqit/oohtml?style=flat&label=&colorB=black"></a></summary>
 
 ```bash
@@ -68,33 +68,33 @@ import init from '@webqit/oohtml/src/init.js';
 init.call(window, Quantum[, options = {}]);
 ```
 
-└ Being an integral part of OOHTML, the Observer API, in addition to the Quantum JS APIs, is also available from the OOHTML installation:
+└ OOHTML'nin ayrılmaz bir parçası olan Observer API, Quantum JS API'lerine ek olarak OOHTML kurulumundan da kullanılabilir:
 
 ```js
 import * as Observer from '@webqit/observer';
 ```
 
-└ To use the polyfill on server-side DOM instances as made possible by libraries like [jsdom](https://github.com/jsdom/jsdom), simply install and initialize the library with the DOM instance as above.
+└ gibi kütüphaneler tarafından mümkün kılınan sunucu tarafı DOM örneklerinde polyfill'i kullanmak için [jsdom](https://github.com/jsdom/jsdom), basitçe kütüphaneyi yukarıdaki gibi DOM örneği ile kurun ve başlatın.
 
-└ But all things "SSR" for OOHTML are best left to the [`@webqit/oohtml-ssr`](https://github.com/webqit/oohtml-ssr) package!
-
-</details>
-
-<details><summary>Extended usage concepts</summary>
-
-If you'll be going ahead to build a real app with OOHTML, you may want to consider also using:
-
-+ the [`@webqit/oohtml-cli`](https://github.com/webqit/oohtml-cli) package for operating a file-based templating system.
-
-+ the modest, OOHTML-based [Webflo](https://github.com/webqit/webflo) framework to greatly streamline your workflow!
+└ Ancak OOHTML için "SSR" ile ilgili her şey en iyi [`@webqit/oohtml-ssr`](https://github.com/webqit/oohtml-ssr) paket!
 
 </details>
 
-<details><summary>Implementation Notes</summary>
+<details><summary>Genişletilmiş kullanım kavramları</summary>
 
-+ **Scoped/Quantum Scripts**. This feature is an extension of [Quantum JS](https://github.com/webqit/quantum-js). While the main OOHTML build is based on the main Quantum JS APIs, a companion "OOHTML Lite" build is also available based on the [Quantum JS Lite](https://github.com/webqit/quantum-js#quantum-js-lite) edition. The trade-off is in the execution timing of `<script quantum></script>` and `<script scoped></script>` elements: being "synchronous/blocking" with the former, and "asynchronous/non-blocking" with the latter! (See [`async`/`defer`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes).)
+OOHTML ile gerçek bir uygulama oluşturmaya devam edecekseniz, kullanmayı da düşünebilirsiniz:
 
-    Of the two, the "OOHTML Lite" edition is the recommend option on web pages (as used above) for faster load times unless there's a requirment to emulate the [native synchronous timing](https://html.spec.whatwg.org/multipage/parsing.html#scripts-that-modify-the-page-as-it-is-being-parsed) of classic scripts, in which case you'd need the main OOHTML build:
++ [`@webqit/oohtml-cli`](https://github.com/webqit/oohtml-cli) dosya tabanlı bir şablonlama sistemini çalıştırmak için paket.
+
++ mütevazı, OOHTML tabanlı [Webflo](https://github.com/webqit/webflo) iş akışınızı büyük ölçüde kolaylaştırmak için çerçeve!
+
+</details>
+
+<details><summary>Uygulama Notları</summary>
+
++ **Kapsamlı/Kuantum Komut Dosyaları**. Bu özellik aşağıdakilerin bir uzantısıdır [Quantum JS](https://github.com/webqit/quantum-js). Ana OOHTML yapısı ana Quantum JS API'lerini temel alırken, [Quantum JS Lite](https://github.com/webqit/quantum-js#quantum-js-lite) sürümünü temel alan tamamlayıcı bir "OOHTML Lite" yapısı da mevcuttur. Değiş tokuş, `<script quantum></script>` ve `<script scoped></script>` öğelerinin yürütme zamanlamasındadır: birincisi ile "synchronous/blocking" ve ikincisi ile "asynchronous/non-blocking" olmak! (Bkz. [`async`/`defer`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes).)
+
+Bu ikisinden "OOHTML Lite" sürümü, web sayfalarında (yukarıda kullanıldığı gibi) daha hızlı yükleme süreleri için tavsiye edilen seçenektir. [native synchronous timing](https://html.spec.whatwg.org/multipage/parsing.html#scripts-that-modify-the-page-as-it-is-being-parsed) klasik komut dosyalarının, bu durumda ana OOHTML yapısına ihtiyacınız olacaktır:
 
     ```html
     <head>
